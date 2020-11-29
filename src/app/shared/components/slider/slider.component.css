@@ -1,0 +1,28 @@
+.box {
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+.header {
+    background-color:  rgba(198, 54, 54, 0.884);
+    color: white;
+    font-weight: 600;
+}
+
+.fix-space-div {
+    margin-left: -15px;
+}
+
+@media (max-width: 768px) {
+    .fix-space {
+        margin-top: 15px;
+    }
+
+    .fix-select-tipoDoc {
+        margin-left: -15px;
+    }
+}
+
+hr.line-empleadores {
+    border: 2px solid red;
+    margin-top: 0;
+}
