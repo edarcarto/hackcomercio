@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Partido } from '../models/Partido.model';
 
 @Injectable()
-export class CaseProductService {
+export class CasePartidoService {
 
    constructor(
       private requestService: RequestService
@@ -12,8 +12,24 @@ export class CaseProductService {
 
    public getAll(): Observable<Partido[]> {
       return new Observable(observer => {
-         this.requestService.get("/partido-politicos").subscribe(res => {
-            observer.next(res.data);
+         
+         this.requestService.get("/partido-politicos", {
+            "offset": 0,
+            "limit": 100,
+            "skip": 0,
+            "order": "string",
+            "where": {
+              "additionalProp1": {}
+            },
+            "fields": {
+              "cod_partido": true,
+              "nombre": true,
+              "pag_web": true,
+              "url_planGobierno": true
+            }
+          }).subscribe(res => {
+             console.log("res",res);
+            observer.next(res);
          }, error => {
             observer.error(error)
          })

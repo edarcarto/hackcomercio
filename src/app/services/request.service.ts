@@ -26,13 +26,17 @@ export class RequestService {
       return this.http.post(url, data)
    }
 
-   get(endpoint: string): Observable<any> {
+   get(endpoint: string, data?: any): Observable<any> {
       var headers = new HttpHeaders()
       if (localStorage.getItem('auth')) {
          headers = headers.set('Authorization','Bearer '+JSON.parse(localStorage.getItem('auth')).access_token)
       }
-      
-      return this.http.get(this.env.baseUrl + endpoint, { headers: headers })
+      headers = headers.set('Content-Type', 'application/json');
+      if(data != null){
+         return this.http.get(this.env.baseUrl + endpoint, { headers: headers, params: data })
+      }else{
+         return this.http.get(this.env.baseUrl + endpoint, { headers: headers })
+      }
    }
 
    post(endpoint: string, data: any): Observable<any> {

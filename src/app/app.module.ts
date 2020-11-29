@@ -11,6 +11,8 @@ import { SearchCandidatesComponent } from './main_components/search-candidates/s
 import { CandidateProfileComponent } from './main_components/candidate-profile/candidate-profile.component';
 import { ElectoralSimulatorComponent } from './main_components/electoral-simulator/electoral-simulator.component';
 import { ElectoralOpinionComponent } from './main_components/electoral-opinion/electoral-opinion.component';
+import { RequestService } from './services/request.service';
+import { CasePartidoService } from './business/cases-use/partido.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { ElectoralOpinionComponent } from './main_components/electoral-opinion/e
     HttpClientModule,
 
   ],
-  providers: [],
+  providers: [
+    RequestService,
+    CasePartidoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
