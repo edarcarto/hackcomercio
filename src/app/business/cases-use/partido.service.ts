@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RequestService } from '../../services/request.service';
 import { Observable } from 'rxjs';
-import { Candidato } from '../models/Candidato.model';
+import { Partido } from '../models/Partido.model';
 
 @Injectable()
 export class CaseProductService {
@@ -10,9 +10,9 @@ export class CaseProductService {
       private requestService: RequestService
    ) { }
 
-   public getAll(): Observable<Candidato[]> {
+   public getAll(): Observable<Partido[]> {
       return new Observable(observer => {
-         this.requestService.get("/candidatos").subscribe(res => {
+         this.requestService.get("/partido-politicos").subscribe(res => {
             observer.next(res.data);
          }, error => {
             observer.error(error)
@@ -20,9 +20,9 @@ export class CaseProductService {
       })
    }
 
-   public get(id): Observable<Candidato> {
+   public get(id): Observable<Partido> {
       return new Observable(observer => {
-         this.requestService.get("candidatos/" + id).subscribe((area: Candidato) => {
+         this.requestService.get("/partido-politicos" + id).subscribe((area: Partido) => {
             observer.next(area);
          }, error => {
             observer.error(error)
@@ -30,9 +30,9 @@ export class CaseProductService {
       })
    }
 
-   public post(data: Candidato): Observable<any> {
+   public post(data: Partido): Observable<any> {
       return new Observable(observer => {
-         this.requestService.post("candidatos", data).subscribe(res => {
+         this.requestService.post("/partido-politicos", data).subscribe(res => {
             observer.next(res.data);
          }, error => {
             observer.error(error)
@@ -40,9 +40,9 @@ export class CaseProductService {
       })
    }
 
-   public put(data: Candidato): Observable<any> {
+   public put(data: Partido): Observable<any> {
       return new Observable(observer => {
-         this.requestService.put("candidatos/" + data.cod_candidato, data).subscribe(res => {
+         this.requestService.put("/partido-politicos" + data.cod_partido, data).subscribe(res => {
             observer.next(res.data);
          }, error => {
             observer.error(error)
@@ -52,7 +52,7 @@ export class CaseProductService {
 
    public delete(id): Observable<any> {
       return new Observable(observer => {
-         this.requestService.delete("candidatos/" + id).subscribe(res => {
+         this.requestService.delete("/partido-politicos" + id).subscribe(res => {
             observer.next(res);
          }, error => {
             observer.error(error)
