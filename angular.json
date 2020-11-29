@@ -123,6 +123,10 @@
   },
   "defaultProject": "mark-Air",
   "cli": {
+<<<<<<< HEAD
     "analytics": "9421ed54-c825-43bf-b8e4-e370cbfe4d5c"
+=======
+    "analytics": "6fbb7f55-0023-420a-b767-9d8228afc0ea"
+>>>>>>> fde9330b91c0a4a41354f14503dff4f4bbb5497c
   }
 }
