@@ -1,0 +1,38 @@
+.footer {
+    background:rgba(198, 54, 54, 0.884); ;
+    color: #F2F2F2;
+}
+.modulo {
+    margin: 10px 10px;
+    width: 25%;
+}
+
+
+.modulo ul {
+    padding: 0;
+    margin: 0;
+}
+
+.modulo ul li {
+
+    list-style: none;
+}
+
+.modulo ul li a {
+    text-decoration: none;
+    color: #F2F2F2;
+}
+
+
+
+.modulo img {
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+    
+    
+}
+
+@media (max-width: 600px){
+
+}
