@@ -13,6 +13,7 @@ import { ElectoralSimulatorComponent } from './main_components/electoral-simulat
 import { ElectoralOpinionComponent } from './main_components/electoral-opinion/electoral-opinion.component';
 import { RequestService } from './services/request.service';
 import { CasePartidoService } from './business/cases-use/partido.service';
+import { CaseCandidatoService } from './business/cases-use/candidato.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CasePartidoService } from './business/cases-use/partido.service';
   ],
   providers: [
     RequestService,
-    CasePartidoService
+    CasePartidoService,
+    CaseCandidatoService
   ],
   bootstrap: [AppComponent]
 })
